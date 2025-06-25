@@ -62,6 +62,17 @@ const caseStudies = [
   },
 ]
 
+function Nav() {
+  return (
+    <nav className="flex space-x-12 items-center">
+      <Link to="/case-studies" className="text-lg font-semibold text-black hover:text-gray-700">Case Studies</Link>
+      <Link to="/about" className="text-lg font-semibold text-black hover:text-gray-700">About</Link>
+      <Link to="/craft" className="text-lg font-semibold text-black hover:text-gray-700">Craft</Link>
+      <Link to="/test" className="text-lg font-semibold text-blue-500 hover:text-blue-700">Test</Link>
+    </nav>
+  );
+}
+
 function Home() {
   const navigate = useNavigate();
   const mainCase = caseStudies[0];
@@ -73,11 +84,7 @@ function Home() {
           <span className="block text-[1.75rem] font-bold text-black leading-tight">Jon Fitzsimmons</span>
           <span className="block text-gray-500 font-medium text-base mt-1">Product Designer</span>
         </div>
-        <nav className="flex space-x-12 items-center">
-          <Link to="/case-studies" className="text-lg font-semibold text-black hover:text-gray-700">Case Studies</Link>
-          <Link to="/about" className="text-lg font-semibold text-black hover:text-gray-700">About</Link>
-          <Link to="/craft" className="text-lg font-semibold text-black hover:text-gray-700">Craft</Link>
-        </nav>
+        <Nav />
       </header>
       <main className="container mx-auto flex flex-row items-center justify-between px-8 pt-20 pb-8" style={{minHeight: 'calc(100vh - 120px)'}}>
         {/* Left Content */}
@@ -124,11 +131,7 @@ function CaseStudiesList() {
           <span className="block text-2xl font-bold text-black">Jon Fitzsimmons</span>
           <span className="block text-gray-500 font-medium text-base">Product Designer</span>
         </div>
-        <div className="flex space-x-12 items-center">
-          <Link to="/case-studies" className="text-lg font-semibold text-black hover:text-gray-700">Case Studies</Link>
-          <Link to="/about" className="text-lg font-semibold text-black hover:text-gray-700">About</Link>
-          <Link to="/craft" className="text-lg font-semibold text-black hover:text-gray-700">Craft</Link>
-        </div>
+        <Nav />
       </nav>
       <div className="flex-1 flex flex-col items-center justify-center px-8 pt-8">
         <h1 className="text-4xl font-bold text-black mb-12">Case Studies</h1>
@@ -208,11 +211,7 @@ function About() {
           <span className="block text-2xl font-bold text-black">Jon Fitzsimmons</span>
           <span className="block text-gray-500 font-medium text-base">Product Designer</span>
         </div>
-        <div className="flex space-x-12 items-center">
-          <Link to="/case-studies" className="text-lg font-semibold text-black hover:text-gray-700">Case Studies</Link>
-          <Link to="/about" className="text-lg font-semibold text-black hover:text-gray-700">About</Link>
-          <Link to="/craft" className="text-lg font-semibold text-black hover:text-gray-700">Craft</Link>
-        </div>
+        <Nav />
       </nav>
       <div className="flex-1 flex flex-col items-center justify-center px-8 pt-8">
         <h1 className="text-4xl font-bold text-black mb-8">About</h1>
@@ -230,11 +229,7 @@ function Craft() {
           <span className="block text-2xl font-bold text-black">Jon Fitzsimmons</span>
           <span className="block text-gray-500 font-medium text-base">Product Designer</span>
         </div>
-        <div className="flex space-x-12 items-center">
-          <Link to="/case-studies" className="text-lg font-semibold text-black hover:text-gray-700">Case Studies</Link>
-          <Link to="/about" className="text-lg font-semibold text-black hover:text-gray-700">About</Link>
-          <Link to="/craft" className="text-lg font-semibold text-black hover:text-gray-700">Craft</Link>
-        </div>
+        <Nav />
       </nav>
       <div className="flex-1 flex flex-col items-center justify-center px-8 pt-8">
         <h1 className="text-4xl font-bold text-black mb-8">Craft</h1>
