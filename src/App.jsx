@@ -66,53 +66,52 @@ function Home() {
   const navigate = useNavigate();
   const mainCase = caseStudies[0];
   return (
-    <div className="min-h-screen bg-[#f5f5f5] flex flex-col">
+    <div className="min-h-screen bg-[#f5f5f5] font-sans">
       {/* Navigation */}
-      <nav className="flex justify-between items-center px-12 pt-10">
+      <header className="container mx-auto flex justify-between items-center pt-12 px-8">
         <div>
-          <span className="block text-2xl font-bold text-black">Jon Fitzsimmons</span>
-          <span className="block text-gray-500 font-medium text-base">Product Designer</span>
+          <span className="block text-[1.75rem] font-bold text-black leading-tight">Jon Fitzsimmons</span>
+          <span className="block text-gray-500 font-medium text-base mt-1">Product Designer</span>
         </div>
-        <div className="flex space-x-12 items-center">
+        <nav className="flex space-x-12 items-center">
           <Link to="/case-studies" className="text-lg font-semibold text-black hover:text-gray-700">Case Studies</Link>
           <Link to="/about" className="text-lg font-semibold text-black hover:text-gray-700">About</Link>
           <Link to="/craft" className="text-lg font-semibold text-black hover:text-gray-700">Craft</Link>
-        </div>
-      </nav>
-      <div className="flex-1 flex flex-row items-center justify-between px-24 pt-8">
+        </nav>
+      </header>
+      <main className="container mx-auto flex flex-row items-center justify-between px-8 pt-20 pb-8" style={{minHeight: 'calc(100vh - 120px)'}}>
         {/* Left Content */}
-        <div className="flex flex-col justify-center" style={{ minWidth: 420 }}>
+        <div className="flex flex-col justify-center w-[420px]">
           <div>
-            <h2 className="text-2xl font-bold text-black mb-2 flex items-end">Community Health <span className="text-xs font-normal ml-2 text-gray-400">01</span></h2>
+            <h2 className="text-2xl font-bold text-black mb-2 flex items-end tracking-tight">Community Health <span className="text-xs font-normal ml-2 text-gray-400">01</span></h2>
             <ul className="mb-8">
               {mainCase.features.map((f, i) => (
-                <li key={f} className="text-xl font-medium text-gray-600 mb-1">{f}</li>
+                <li key={f} className="text-xl font-medium text-gray-500 mb-1 leading-tight">{f}</li>
               ))}
             </ul>
-            <div className="flex space-x-4 mb-8">
+            <div className="flex flex-col space-y-3 mb-8">
               {mainCase.stats.map((s, i) => (
-                <div key={s.label} className="bg-white rounded-lg shadow border border-gray-200 px-6 py-4 flex flex-col items-center min-w-[110px]">
-                  <span className="text-xl font-bold text-black">{s.value}</span>
-                  <span className="text-xs text-gray-500 font-semibold mt-1">{s.label}</span>
+                <div key={s.label} className="bg-white rounded-lg border border-gray-200 px-7 py-4 flex flex-col items-center min-w-[140px] shadow-sm">
+                  <span className="text-xl font-bold text-black leading-none">{s.value}</span>
+                  <span className="text-xs text-gray-500 font-semibold mt-1 uppercase tracking-wide">{s.label}</span>
                 </div>
               ))}
             </div>
             <button
-              className="mt-2 text-gray-700 font-medium flex items-center hover:underline"
+              className="mt-2 text-gray-700 font-medium flex items-center hover:underline group"
               onClick={() => navigate('/case-studies')}
             >
-              <span className="mr-2">👋</span> View all case studies <span className="ml-1">↗</span>
+              <span className="mr-2 text-2xl">👋</span> <span>View all case studies</span> <span className="ml-1 group-hover:translate-x-1 transition-transform">↗</span>
             </button>
           </div>
         </div>
         {/* Right Content */}
-        <div className="flex-1 flex justify-center items-center">
+        <div className="flex-1 flex justify-end items-center">
           <div className="relative">
-            {/* Placeholder phone mockup */}
-            <img src="/phone-mockup.png" alt="Phone Mockup" className="w-[340px] h-auto rounded-3xl shadow-2xl border border-gray-300" />
+            <img src="/phone-mockup.png" alt="Phone Mockup" className="w-[340px] h-[700px] object-cover rounded-3xl shadow-2xl border border-gray-300" />
           </div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }
