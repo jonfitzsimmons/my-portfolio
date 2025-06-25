@@ -244,6 +244,48 @@ function Craft() {
   )
 }
 
+function TestLanding() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] flex flex-col font-sans">
+      <header className="container mx-auto flex justify-between items-center pt-12 px-8">
+        <div>
+          <span className="block text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">Vibefolio</span>
+          <span className="block text-blue-200 font-medium text-base mt-1">A Fake Portfolio Concept</span>
+        </div>
+        <nav className="flex space-x-10 items-center">
+          <Link to="/" className="text-lg font-semibold text-white hover:text-blue-200 transition">Home</Link>
+          <Link to="/case-studies" className="text-lg font-semibold text-white hover:text-blue-200 transition">Case Studies</Link>
+          <Link to="/about" className="text-lg font-semibold text-white hover:text-blue-200 transition">About</Link>
+          <Link to="/craft" className="text-lg font-semibold text-white hover:text-blue-200 transition">Craft</Link>
+          <Link to="/test" className="text-lg font-semibold text-blue-400 underline underline-offset-4">Test</Link>
+        </nav>
+      </header>
+      <main className="container mx-auto flex flex-col items-center justify-center flex-1 px-8 py-16">
+        <div className="text-center">
+          <h1 className="text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">Welcome to Vibefolio</h1>
+          <p className="text-2xl text-blue-100 mb-10 max-w-2xl mx-auto">A creative playground for portfolio vibes. This is a fake landing page concept with bold gradients, playful layouts, and a modern aesthetic. Use this as inspiration for your next portfolio!</p>
+          <div className="flex flex-wrap justify-center gap-8 mb-12">
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-8 w-72 shadow-lg backdrop-blur-md">
+              <h2 className="text-xl font-bold text-white mb-2">✨ Stand Out</h2>
+              <p className="text-blue-100">Use bold colors, big type, and creative layouts to make your work pop.</p>
+            </div>
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-8 w-72 shadow-lg backdrop-blur-md">
+              <h2 className="text-xl font-bold text-white mb-2">🎨 Show Personality</h2>
+              <p className="text-blue-100">Let your site reflect your vibe. Add playful touches, custom graphics, and fun copy.</p>
+            </div>
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-8 w-72 shadow-lg backdrop-blur-md">
+              <h2 className="text-xl font-bold text-white mb-2">🚀 Animate</h2>
+              <p className="text-blue-100">Use smooth transitions and micro-interactions to create a delightful experience.</p>
+            </div>
+          </div>
+          <button className="mt-6 px-10 py-4 bg-blue-500 text-white font-bold rounded-full shadow-xl hover:bg-blue-600 transition text-xl">Get Inspired</button>
+        </div>
+      </main>
+      <footer className="text-center text-blue-200 py-8 text-sm opacity-70">&copy; 2025 Vibefolio. All vibes reserved.</footer>
+    </div>
+  )
+}
+
 function App() {
   return (
     <Routes>
@@ -252,6 +294,7 @@ function App() {
       <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
       <Route path="/about" element={<About />} />
       <Route path="/craft" element={<Craft />} />
+      <Route path="/test" element={<TestLanding />} />
     </Routes>
   )
 }
