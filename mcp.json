@@ -3,9 +3,8 @@
     "TalkToFigma": {
       "command": "bunx",
       "args": [
-        "cursor-talk-to-figma-mcp@latest",
-        "--server=vps.sonnylab.com"
+        "cursor-talk-to-figma-mcp@latest"
       ]
     }
   }
-} 
+}

@@ -60,6 +60,26 @@ const caseStudies = [
     image: '/phone-mockup.png',
     preview: false,
   },
+  {
+    id: 'figma-project',
+    number: '04',
+    title: 'Figma Portfolio Project',
+    features: [
+      'Modern Layout',
+      'Clean Typography',
+      'Case Study Sections',
+      'Responsive Design',
+      'Figma-inspired UI',
+    ],
+    stats: [
+      { label: 'Design Hours', value: '120+' },
+      { label: 'Screens', value: '15+' },
+      { label: 'Iterations', value: '8' },
+    ],
+    image: '/mockups/case-study.png', // Use your mockup or a placeholder
+    preview: false,
+    description: 'A portfolio project inspired by a Figma design. Showcases a modern, clean layout with detailed case study sections and responsive design.'
+  },
 ]
 
 function Nav() {
@@ -203,6 +223,62 @@ function CaseStudyDetail() {
   )
 }
 
+function FigmaProjectDetail() {
+  const cs = caseStudies.find(cs => cs.id === 'figma-project');
+  return (
+    <div className="min-h-screen bg-[#f5f5f5] flex flex-col font-sans">
+      <header className="container mx-auto flex justify-between items-center pt-12 px-8">
+        <div>
+          <span className="block text-2xl font-bold text-black">Jon Fitzsimmons</span>
+          <span className="block text-gray-500 font-medium text-base mt-1">Product Designer</span>
+        </div>
+        <Nav />
+      </header>
+      <main className="container mx-auto flex flex-col md:flex-row items-start justify-between px-8 pt-16 pb-8 gap-12">
+        {/* Left Content */}
+        <div className="flex-1 max-w-xl">
+          <h1 className="text-5xl font-extrabold text-black mb-6 tracking-tight">{cs.title}</h1>
+          <p className="text-lg text-gray-600 mb-8">{cs.description}</p>
+          <ul className="mb-8 space-y-2">
+            {cs.features.map(f => (
+              <li key={f} className="text-base text-gray-700 flex items-center"><span className="mr-2 text-blue-500">•</span>{f}</li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-4 mb-8">
+            {cs.stats.map(s => (
+              <div key={s.label} className="bg-white rounded-lg border border-gray-200 px-6 py-4 flex flex-col items-center min-w-[110px] shadow-sm">
+                <span className="text-xl font-bold text-black leading-none">{s.value}</span>
+                <span className="text-xs text-gray-500 font-semibold mt-1 uppercase tracking-wide">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Right Content */}
+        <div className="flex-1 flex justify-center items-center">
+          <img src={cs.image} alt="Figma Project Mockup" className="w-full max-w-md rounded-3xl shadow-2xl border border-gray-300" />
+        </div>
+      </main>
+      <section className="container mx-auto px-8 pb-16">
+        <h2 className="text-2xl font-bold text-black mb-4">Case Study Sections</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-white rounded-xl p-6 shadow border border-gray-100">
+            <h3 className="text-lg font-bold mb-2 text-blue-600">01. Research</h3>
+            <p className="text-gray-600">User interviews, competitor analysis, and problem definition to inform the design direction.</p>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow border border-gray-100">
+            <h3 className="text-lg font-bold mb-2 text-blue-600">02. Ideation</h3>
+            <p className="text-gray-600">Sketches, wireframes, and brainstorming sessions to explore creative solutions.</p>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow border border-gray-100">
+            <h3 className="text-lg font-bold mb-2 text-blue-600">03. Prototyping</h3>
+            <p className="text-gray-600">High-fidelity Figma prototypes and interactive flows for user testing and feedback.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function About() {
   return (
     <div className="min-h-screen bg-[#f5f5f5] flex flex-col">
@@ -287,6 +363,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/case-studies" element={<CaseStudiesList />} />
       <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
+      <Route path="/case-studies/figma-project" element={<FigmaProjectDetail />} />
       <Route path="/about" element={<About />} />
       <Route path="/craft" element={<Craft />} />
       <Route path="/test" element={<TestLanding />} />
